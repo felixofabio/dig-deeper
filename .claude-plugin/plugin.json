@@ -1,0 +1,18 @@
+{
+  "name": "dig-deeper",
+  "description": "Guided interview + authentic social media content creation from real personal experiences.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fábio Félix"
+  },
+  "repository": "https://github.com/felixofabio/dig-deeper",
+  "license": "MIT",
+  "keywords": [
+    "content",
+    "storytelling",
+    "social-media",
+    "interview",
+    "copywriting",
+    "carousel"
+  ]
+}

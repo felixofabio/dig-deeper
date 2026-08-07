@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "dig-deeper-marketplace",
+  "owner": {
+    "name": "Fábio Félix"
+  },
+  "version": "1.0.0",
+  "description": "Marketplace for the dig-deeper skill: guided interview and authentic content creation from real personal experiences.",
+  "plugins": [
+    {
+      "name": "dig-deeper",
+      "description": "Guided interview + authentic social media content creation from real personal experiences.",
+      "source": "./",
+      "category": "content"
+    }
+  ]
+}
