@@ -1,0 +1,29 @@
+name: Build and attach Claude.ai release zip
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build flat zip for Claude.ai upload
+        run: |
+          mkdir -p /tmp/dig-deeper-release/dig-deeper
+          cp skills/dig-deeper/SKILL.md /tmp/dig-deeper-release/dig-deeper/
+          cd /tmp/dig-deeper-release
+          zip -r dig-deeper-claude-ai.zip dig-deeper/
+
+      - name: Upload asset to the release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            /tmp/dig-deeper-release/dig-deeper-claude-ai.zip --clobber
